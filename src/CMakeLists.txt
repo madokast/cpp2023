@@ -1,3 +1,5 @@
 SET(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_STANDARD_REQUIRED True)
-ADD_EXECUTABLE(main main.cpp)
+SET(TEST_LIST "codes/strcov.cpp" "codes/strcov.h" "codes/strview.h" "codes/strview.cpp")
+SET(TEST_LIST2 "codes/newe.h" "codes/newe.cpp" "codes/newptr.h" "codes/newptr.cpp")
+ADD_EXECUTABLE(main main.cpp ${TEST_LIST} ${TEST_LIST2})
