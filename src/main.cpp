@@ -7,6 +7,8 @@
 #include "codes/assignop.h"
 #include "codes2/SwapAssignCls.h"
 #include "codes2/returnref.h"
+#include "codes3/method_template.h"
+#include "codes3/const_template.h"
 
 auto codes2() {
     std::cout << "code2 SwapAssignCls" << std::endl;
@@ -41,7 +43,27 @@ auto codes() {
     std::cout << (a = b) << std::endl;
 }
 
+auto codes3() {
+    std::cout << "codes method template" <<std::endl;
+    code3::Value<int> i {3};
+    code3::Value<double> d {6.28};
+    i.print();
+    d.print();
+    code3::Value<double> d2 {i};
+    code3::Value<int> i2 {d};
+    d2.print();
+    i2.print();
+    code3::Value<int> ii {i2};
+    ii.print();
+
+    std::cout << code3::pi<int> << std::endl;
+    std::cout << code3::pi<float> << std::endl;
+    std::cout << code3::pi<double> << std::endl;
+    std::cout << code3::pi<long double> << std::endl;
+}
+
 auto main() -> int {
     codes();
     codes2();
+    codes3();
 }
