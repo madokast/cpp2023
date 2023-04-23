@@ -9,6 +9,7 @@
 #include "codes2/returnref.h"
 #include "codes3/method_template.h"
 #include "codes3/const_template.h"
+#include "codes3/type_traits.h"
 
 auto codes2() {
     std::cout << "code2 SwapAssignCls" << std::endl;
@@ -60,6 +61,11 @@ auto codes3() {
     std::cout << code3::pi<float> << std::endl;
     std::cout << code3::pi<double> << std::endl;
     std::cout << code3::pi<long double> << std::endl;
+
+    std::cout << "type traits" << std::endl;
+    typename code3::Type<int>::ValueType v{ 123 };
+    typename code3::Type<int>::PointerType p{ &v };
+    std::cout << v << " " << *p << " " << code3::Type<int>::Size << std::endl;
 }
 
 auto main() -> int {
